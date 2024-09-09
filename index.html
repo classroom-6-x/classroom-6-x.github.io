@@ -124,23 +124,39 @@ let gameData = [];
 
 // Function to fetch and parse the sitemap.xml
 function fetchSitemapData() {
-    fetch('sitemap.xml')
+    fetch('/sitemap.xml')
         .then(response => response.text())
         .then(data => {
             const parser = new DOMParser();
             const xml = parser.parseFromString(data, 'application/xml');
             const locElements = xml.getElementsByTagName('loc');
             
-            // Extracting titles and URLs
+            // Fetch titles for each URL
             gameData = Array.from(locElements).map(loc => {
-                const url = loc.textContent;
-                const title = url.split('index.html').pop().replace(/-/g, ' ').replace('.html', '');
-                return { title, url }; // Store both title and URL
+                const url = loc.textContent.trim() + '.html'; // Ensure '.html' is appended
+                return fetchPageTitle(url).then(title => ({ title, url }));
+            });
+
+            // Resolve all promises to ensure titles are fetched
+            Promise.all(gameData).then(results => {
+                gameData = results; // Update gameData with the resolved values
             });
         })
         .catch(error => {
             console.error('Error fetching or parsing sitemap:', error);
         });
+}
+
+// Fetch the title of the page from the URL
+function fetchPageTitle(url) {
+    return fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const title = doc.querySelector('title').innerText;
+            return title || url; // Fallback to URL if title is not found
+        })
+        .catch(() => url); // Fallback in case of any error
 }
 
 // Search function to filter and display results
@@ -164,7 +180,7 @@ function performSearch() {
         filteredGames.forEach(game => {
             const resultItem = document.createElement('div');
             resultItem.className = 'search-result-item';
-            resultItem.textContent = game.title;
+            resultItem.textContent = game.title; // Display the title
             resultItem.onclick = () => {
                 // Navigate to the URL of the selected game
                 window.location.href = game.url;
@@ -184,6 +200,7 @@ document.addEventListener('click', function(event) {
         overlay.style.display = 'none';
     }
 });
+
 
 </script>		<h3 class="item-title"><i class="fa fa-plus" aria-hidden="true"></i>NEW GAMES</h3>
 		<div class="row" id="section-new-games">
