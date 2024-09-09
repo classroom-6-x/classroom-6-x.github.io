@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:49:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+        
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<title>Classroom 6x | Play Unblocked Games</title>
-		<meta name="description" content="Classroom 6x Games | Play Unblocked Games for Free">
+		<meta name="description" content="Play Unblocked Games for Free">
 		<link rel="canonical" href="index.html" />
 								<link rel="stylesheet" type="text/css" href="content/themes/default/style/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="content/themes/default/style/jquery-comments.css" />
@@ -17,7 +20,12 @@
 		<!-- Google fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-				        <!-- Google tag (gtag.js) -->
+				
+<style>
+.input-group {
+display: none;
+}
+</style>        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDLYWGWPHV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -42,7 +50,7 @@
 				<li class="nav-item">
 					</li>
 	</ul>
-	<form class="form-inline my-2 my-lg-0 search-bar" >
+	<form class="form-inline my-2 my-lg-0 search-bar" action="https://phpstack-1113809-4800960.cloudwaysapps.com/index.php">
 		<div class="input-group">
 			<input type="hidden" name="viewpage" value="search" />
 			<input type="text" class="form-control rounded-left search" placeholder="Search game" name="slug" minlength="2" required />
@@ -63,125 +71,239 @@
 </nav>			</div>
 		</div><div class="container">
 	<div class="game-container">
-				<h3 class="item-title"><i class="fa fa-plus" aria-hidden="true"></i>NEW GAMES</h3>
+		<style>
+.search-container {
+   
+    position: relative;
+    width: 400px; /* Adjust width as needed */
+    margin: auto;
+  border-style: solid;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-results-overlay {
+    position: absolute;
+    top: 40px; /* Adjust to position below the search box */
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto;
+    display: none;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-result-item {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0;
+}
+
+</style><!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" class="search-input" placeholder="Search games..." oninput="performSearch()">
+    <div id="search-results-overlay" class="search-results-overlay" style="display: none;"></div>
+</div><script>
+document.addEventListener('DOMContentLoaded', () => {
+    fetchSitemapData();
+});
+
+let gameData = [];
+
+// Function to fetch and parse the sitemap.xml
+function fetchSitemapData() {
+    fetch('sitemap.xml')
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(data, 'application/xml');
+            const locElements = xml.getElementsByTagName('loc');
+            
+            // Extracting titles and URLs
+            gameData = Array.from(locElements).map(loc => {
+                const url = loc.textContent;
+                const title = url.split('index.html').pop().replace(/-/g, ' ').replace('.html', '');
+                return { title, url }; // Store both title and URL
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing sitemap:', error);
+        });
+}
+
+// Search function to filter and display results
+function performSearch() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const resultsOverlay = document.getElementById('search-results-overlay');
+    
+    // Clear previous results
+    resultsOverlay.innerHTML = '';
+    
+    if (query.length < 2) {
+        resultsOverlay.style.display = 'none';
+        return;
+    }
+
+    // Filter titles based on the query
+    const filteredGames = gameData.filter(game => game.title.toLowerCase().includes(query));
+
+    // Display results in the overlay
+    if (filteredGames.length > 0) {
+        filteredGames.forEach(game => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'search-result-item';
+            resultItem.textContent = game.title;
+            resultItem.onclick = () => {
+                // Navigate to the URL of the selected game
+                window.location.href = game.url;
+            };
+            resultsOverlay.appendChild(resultItem);
+        });
+        resultsOverlay.style.display = 'block';
+    } else {
+        resultsOverlay.style.display = 'none';
+    }
+}
+
+// Hide the overlay when clicking outside of it
+document.addEventListener('click', function(event) {
+    const overlay = document.getElementById('search-results-overlay');
+    if (!event.target.closest('.search-container')) {
+        overlay.style.display = 'none';
+    }
+});
+
+</script>		<h3 class="item-title"><i class="fa fa-plus" aria-hidden="true"></i>NEW GAMES</h3>
 		<div class="row" id="section-new-games">
 							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/13-days-in-hell-unblocked.html">
+	<a href="game/basketball-frvr-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/13-days-in-hell-unblocked_1.webp" class="small-thumb lazyload" alt="13 Days in Hell Unblocked"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/basketball-frvr-unblocked-game_2.webp" class="small-thumb lazyload" alt="Basketball FRVR Unblocked Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">13 Days in Hell Unblocked</div>
+			<div class="list-title">Basketball FRVR Unblocked Game</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-moto-x3m-2-unblocked-online.html">
+	<a href="game/play-cluster-rush-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-moto-x3m-2-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Moto X3M 2 Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-cluster-rush-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Cluster Rush Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Moto X3M 2 Unblocked Online</div>
+			<div class="list-title">Play Cluster Rush Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/gacha-life-unblocked-game.html">
+	<a href="game/the-impossible-quiz-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/gacha-life-unblocked-game_2.webp" class="small-thumb lazyload" alt="Gacha Life Unblocked Game"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/the-impossible-quiz-unblocked-game_2.webp" class="small-thumb lazyload" alt="The Impossible Quiz Unblocked Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Gacha Life Unblocked Game</div>
+			<div class="list-title">The Impossible Quiz Unblocked Game</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-moto-x3m-3-unblocked-online.html">
+	<a href="game/play-basket-ball-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-moto-x3m-3-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Moto X3M 3 Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-basket-ball-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Basket Ball Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Moto X3M 3 Unblocked Online</div>
+			<div class="list-title">Play Basket Ball Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-red-ball-4-unblocked-online.html">
+	<a href="game/play-parking-fury-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-red-ball-4-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Red Ball 4 Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-parking-fury-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Parking Fury Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Red Ball 4 Unblocked Online</div>
+			<div class="list-title">Play Parking Fury Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-super-mario-unblocked-online.html">
+	<a href="game/there-is-no-real-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-super-mario-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Super Mario Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://cdn2.steamgriddb.com/icon/4bc2d171e7cff7fa3c2c4bd0bf5dabc4.png" class="small-thumb lazyload" alt="There Is No Real Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Super Mario Unblocked Online</div>
+			<div class="list-title">There Is No Real Game</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/fnaf-2-unblocked-game.html">
+	<a href="game/play-monster-tracks-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/fnaf-2-unblocked-game_2.webp" class="small-thumb lazyload" alt="FNaF 2 Unblocked Game"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-monster-tracks-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Monster Tracks Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">FNaF 2 Unblocked Game</div>
+			<div class="list-title">Play Monster Tracks Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-icy-purple-head-superslide-unblocked.html">
+	<a href="game/play-jelly-truck-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-icy-purple-head-superslide-unblocked_2.webp" class="small-thumb lazyload" alt="Play Icy Purple Head Superslide Unblocked"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-jelly-truck-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Jelly Truck Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Icy Purple Head Superslide Unblocked</div>
+			<div class="list-title">Play Jelly Truck Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-wood-block-puzzle-unblocked-online.html">
+	<a href="game/bike-trials-winter-2-unblocked.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-wood-block-puzzle-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Wood Block Puzzle Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/bike-trials-winter-2-unblocked_2.webp" class="small-thumb lazyload" alt="Bike Trials Winter 2 Unblocked"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Wood Block Puzzle Unblocked Online</div>
+			<div class="list-title">Bike Trials Winter 2 Unblocked</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/blockpost-unblocked-game.html">
+	<a href="game/extreme-pamplona-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/blockpost-unblocked-game_2.webp" class="small-thumb lazyload" alt="Blockpost Unblocked Game"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/extreme-pamplona-unblocked-game_2.webp" class="small-thumb lazyload" alt="Extreme Pamplona Unblocked Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Blockpost Unblocked Game</div>
+			<div class="list-title">Extreme Pamplona Unblocked Game</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-snail-bob-8-unblocked-online.html">
+	<a href="game/stealing-the-diamond-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-snail-bob-8-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Snail Bob 8 Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/df942cb27fd6d1be99cbc496550825cb50a0a4c057476ce5cc350141b0ac7ada.png" class="small-thumb lazyload" alt="Stealing The Diamond Unblocked Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Snail Bob 8 Unblocked Online</div>
+			<div class="list-title">Stealing The Diamond Unblocked Game</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-snail-bob-7-unblocked-online.html">
+	<a href="game/infiltrating-the-airship-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-snail-bob-7-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Snail Bob 7 Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://i0.wp.com/herkuli.net/wp-content/uploads/2021/03/infiltrating-the-airship2.png?fit=512%2C512&ssl=1" class="small-thumb lazyload" alt="Infiltrating The Airship Unblocked Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Snail Bob 7 Unblocked Online</div>
+			<div class="list-title">Infiltrating The Airship Unblocked Game</div>
 		</div>
 	</div>
 	</a>
@@ -230,6 +352,26 @@
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="game/poly-track-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/files/images/poly-track.jpg" class="small-thumb lazyload" alt="Poly Track Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Poly Track Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="game/eggy-car-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://school-lessons.lol/_webp/eggycar.webp" class="small-thumb lazyload" alt="Eggy Car Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Eggy Car Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
 	<a href="game/cat-ninja.html">
 	<div class="list-game">
 		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/files/images/cat.jpg" class="small-thumb lazyload" alt="Cat Ninja"></div>
@@ -250,22 +392,12 @@
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/poly-track-unblocked-game.html">
+	<a href="game/hill-climbing.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/files/images/poly-track.jpg" class="small-thumb lazyload" alt="Poly Track Unblocked Game"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamemonetize.com/v33fk4a7b97riw532yhhg9gnawsqrhvn/512x512.jpg" class="small-thumb lazyload" alt="Hill Climbing"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Poly Track Unblocked Game</div>
-		</div>
-	</div>
-	</a>
-</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/eggy-car-unblocked-game.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://school-lessons.lol/_webp/eggycar.webp" class="small-thumb lazyload" alt="Eggy Car Unblocked Game"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Eggy Car Unblocked Game</div>
+			<div class="list-title">Hill Climbing</div>
 		</div>
 	</div>
 	</a>
@@ -290,6 +422,26 @@
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="game/smash-fruits-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm7NnRNryD3Df2KsntHZm_j-uC7aFRxhpOrQ&s" class="small-thumb lazyload" alt="Smash Fruits Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Smash Fruits Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="game/worlds-hardest-game-unblocked.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/worlds-hardest-game-unblocked_2.webp" class="small-thumb lazyload" alt="Worlds Hardest Game Unblocked"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Worlds Hardest Game Unblocked</div>
+		</div>
+	</div>
+	</a>
+</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
 	<a href="game/duck-life-unblocked-game.html">
 	<div class="list-game">
 		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVbKJST5TTnBJ1QVM-z3ZQgagxSncQ2WQ3jBxB96U7jKsL7SDoRj7MHXZXzOMhH2bsz4M&usqp=CAU" class="small-thumb lazyload" alt="Duck Life Unblocked Game"></div>
@@ -299,96 +451,56 @@
 		</div>
 	</div>
 	</a>
-</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/ovo-unblocked.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/files/images/ovo2-unblocked.png" class="small-thumb lazyload" alt="OvO Unblocked"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">OvO Unblocked</div>
-		</div>
-	</div>
-	</a>
-</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/1v1-lol.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/1v1-lol_2.webp" class="small-thumb lazyload" alt="1v1 Lol."></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">1v1 Lol.</div>
-		</div>
-	</div>
-	</a>
-</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/hill-climbing.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamemonetize.com/v33fk4a7b97riw532yhhg9gnawsqrhvn/512x512.jpg" class="small-thumb lazyload" alt="Hill Climbing"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Hill Climbing</div>
-		</div>
-	</div>
-	</a>
 </div>					</div>
 		<h3 class="item-title"><i class="fa fa-gamepad" aria-hidden="true"></i>YOU MAY LIKE</h3>
 		<div class="row">
 							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/13-days-in-hell-unblocked.html">
+	<a href="game/real-flying-truck-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/13-days-in-hell-unblocked_1.webp" class="small-thumb lazyload" alt="13 Days in Hell Unblocked"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/real-flying-truck-unblocked-game_2.webp" class="small-thumb lazyload" alt="Real Flying Truck Unblocked Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">13 Days in Hell Unblocked</div>
+			<div class="list-title">Real Flying Truck Unblocked Game</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-trackmania-blitz-unblocked-online.html">
+	<a href="game/play-tunnel-rush-2-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamedistribution.com/5ea2342908934193855762bc52a812ce-512x512.jpg" class="small-thumb lazyload" alt="Play TrackMania Blitz Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-tunnel-rush-2-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Tunnel Rush 2 Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play TrackMania Blitz Unblocked Online</div>
+			<div class="list-title">Play Tunnel Rush 2 Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-snail-bob-5-unblocked-online.html">
+	<a href="game/eggy-car-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-snail-bob-5-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Snail Bob 5 Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://school-lessons.lol/_webp/eggycar.webp" class="small-thumb lazyload" alt="Eggy Car Unblocked Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Snail Bob 5 Unblocked Online</div>
+			<div class="list-title">Eggy Car Unblocked Game</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/bob-the-robber-2.html">
+	<a href="game/play-retro-bowl-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/bob-the-robber-2_2.webp" class="small-thumb lazyload" alt="Bob The Robber 2"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-retro-bowl-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Retro Bowl Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Bob The Robber 2</div>
+			<div class="list-title">Play Retro Bowl Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/stick-merge-halloween-unblocked-game.html">
+	<a href="game/play-tap-tap-shots-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://www.friv2023.com/games/images/stick-merge-halloween.webp" class="small-thumb lazyload" alt="Stick Merge Halloween Unblocked Game"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-tap-tap-shots-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Tap Tap Shots Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Stick Merge Halloween Unblocked Game</div>
-		</div>
-	</div>
-	</a>
-</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/daily-crossword-unblocked.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamedistribution.com/e74d9a4123fb4880bc5e3d7664c9dcc9-512x512.jpg" class="small-thumb lazyload" alt="Daily Crossword Unblocked"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Daily Crossword Unblocked</div>
+			<div class="list-title">Play Tap Tap Shots Unblocked Online</div>
 		</div>
 	</div>
 	</a>
@@ -403,12 +515,12 @@
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-dots-and-boxes-unblocked.html">
+	<a href="game/play-tic-tac-toe-unblocked.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamedistribution.com/d4fbbfca3a8e4db1a7a5ccc3784166c5-512x512.jpeg" class="small-thumb lazyload" alt="Play Dots and Boxes Unblocked"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://play-lh.googleusercontent.com/TyxBudh89-zE-PiaF6MZRW_NHoo2mVJR9_MIs9SWILU2HZy0b46Hi2HOKSi3mTOVdBA=w240-h480-rw" class="small-thumb lazyload" alt="Play Tic Tac Toe Unblocked"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play Dots and Boxes Unblocked</div>
+			<div class="list-title">Play Tic Tac Toe Unblocked</div>
 		</div>
 	</div>
 	</a>
@@ -423,32 +535,42 @@
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-clicker-heroes-unblocked-online.html">
+	<a href="game/play-wood-block-puzzle-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-clicker-heroes-unblocked-online_2.webp" class="small-thumb lazyload" alt="PLay Clicker Heroes Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-wood-block-puzzle-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Wood Block Puzzle Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">PLay Clicker Heroes Unblocked Online</div>
+			<div class="list-title">Play Wood Block Puzzle Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/play-8-ball-pool-unblocked-online.html">
+	<a href="game/play-endless-tunnel-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-8-ball-pool-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play 8 Ball Pool Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-endless-tunnel-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Endless Tunnel Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play 8 Ball Pool Unblocked Online</div>
+			<div class="list-title">Play Endless Tunnel Unblocked Online</div>
 		</div>
 	</div>
 	</a>
 </div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="game/idle-mining-empire-unblocked-game.html">
+	<a href="game/play-warrior-survial-io-unblocked-online.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/idle-mining-empire-unblocked-game_2.webp" class="small-thumb lazyload" alt="Idle Mining Empire Unblocked Game"></div>
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-warrior-survial-io-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Warrior Survial.io Unblocked Online"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Idle Mining Empire Unblocked Game</div>
+			<div class="list-title">Play Warrior Survial.io Unblocked Online</div>
+		</div>
+	</div>
+	</a>
+</div>							<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="game/bitlife-simulation.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamedistribution.com/ac6a950a44d144139dabe7837aa4aab9-512x512.jpg" class="small-thumb lazyload" alt="BitLife Simulation"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">BitLife Simulation</div>
 		</div>
 	</div>
 	</a>
@@ -498,5 +620,5 @@
 	<script type="text/javascript" src="js/stats.js"></script>
 		  </body>
 
-
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:49:49 GMT -->
 </html>

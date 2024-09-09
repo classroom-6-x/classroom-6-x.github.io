@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	
-<!--  phpstack-1113809-4800960.cloudwaysapps.com/category/racing , Sat, 24 Aug 2024 09:53:12 GMT -->
-
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/category/racing by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:50:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+        
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<title>Racing | Play Unblocked Games</title>
@@ -19,7 +20,12 @@
 		<!-- Google fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-				        <!-- Google tag (gtag.js) -->
+				
+<style>
+.input-group {
+display: none;
+}
+</style>        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDLYWGWPHV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -44,7 +50,7 @@
 				<li class="nav-item">
 					</li>
 	</ul>
-	<form class="form-inline my-2 my-lg-0 search-bar" >
+	<form class="form-inline my-2 my-lg-0 search-bar" action="https://phpstack-1113809-4800960.cloudwaysapps.com/index.php">
 		<div class="input-group">
 			<input type="hidden" name="viewpage" value="search" />
 			<input type="text" class="form-control rounded-left search" placeholder="Search game" name="slug" minlength="2" required />
@@ -65,12 +71,206 @@
 </nav>			</div>
 		</div><div class="container">
 	<div class="game-container">
-				<div class="content-wrapper">
+		<style>
+.search-container {
+   
+    position: relative;
+    width: 400px; /* Adjust width as needed */
+    margin: auto;
+  border-style: solid;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-results-overlay {
+    position: absolute;
+    top: 40px; /* Adjust to position below the search box */
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto;
+    display: none;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-result-item {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0;
+}
+
+</style><!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" class="search-input" placeholder="Search games..." oninput="performSearch()">
+    <div id="search-results-overlay" class="search-results-overlay" style="display: none;"></div>
+</div><script>
+document.addEventListener('DOMContentLoaded', () => {
+    fetchSitemapData();
+});
+
+let gameData = [];
+
+// Function to fetch and parse the sitemap.xml
+function fetchSitemapData() {
+    fetch('../sitemap.xml')
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(data, 'application/xml');
+            const locElements = xml.getElementsByTagName('loc');
+            
+            // Extracting titles and URLs
+            gameData = Array.from(locElements).map(loc => {
+                const url = loc.textContent;
+                const title = url.split('../index.html').pop().replace(/-/g, ' ').replace('.html', '');
+                return { title, url }; // Store both title and URL
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing sitemap:', error);
+        });
+}
+
+// Search function to filter and display results
+function performSearch() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const resultsOverlay = document.getElementById('search-results-overlay');
+    
+    // Clear previous results
+    resultsOverlay.innerHTML = '';
+    
+    if (query.length < 2) {
+        resultsOverlay.style.display = 'none';
+        return;
+    }
+
+    // Filter titles based on the query
+    const filteredGames = gameData.filter(game => game.title.toLowerCase().includes(query));
+
+    // Display results in the overlay
+    if (filteredGames.length > 0) {
+        filteredGames.forEach(game => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'search-result-item';
+            resultItem.textContent = game.title;
+            resultItem.onclick = () => {
+                // Navigate to the URL of the selected game
+                window.location.href = game.url;
+            };
+            resultsOverlay.appendChild(resultItem);
+        });
+        resultsOverlay.style.display = 'block';
+    } else {
+        resultsOverlay.style.display = 'none';
+    }
+}
+
+// Hide the overlay when clicking outside of it
+document.addEventListener('click', function(event) {
+    const overlay = document.getElementById('search-results-overlay');
+    if (!event.target.closest('.search-container')) {
+        overlay.style.display = 'none';
+    }
+});
+
+</script>		<div class="content-wrapper">
 			<h3 class="item-title">Racing Games</h3>
-			<p>30 games in total. Page 1 of 1</p>
+			<p>38 games in total. Page 1 of 2</p>
 						<div class="game-container">
 				<div class="row">
 										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../game/bike-trials-winter-2-unblocked.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/bike-trials-winter-2-unblocked_2.webp" class="small-thumb lazyload" alt="Bike Trials Winter 2 Unblocked"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Bike Trials Winter 2 Unblocked</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../game/extreme-pamplona-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/extreme-pamplona-unblocked-game_2.webp" class="small-thumb lazyload" alt="Extreme Pamplona Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Extreme Pamplona Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../game/fleeing-the-complex-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://steamuserimages-a.akamaihd.net/ugc/1604925196277670493/EF0BB0EBD7BAC294E4BB510E8C37A5676B4F5FDE/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" class="small-thumb lazyload" alt="Fleeing The Complex Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Fleeing The Complex Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../game/ultimate-off-road-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://oyunlar1.com/media/90baf14c-53f5-4b40-a562-d5a1fdbcf21e/?ar[r]=1x1&ar[w]=512&fmt=.png" class="small-thumb lazyload" alt="Ultimate Off Road Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Ultimate Off Road Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../game/real-flying-truck-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/real-flying-truck-unblocked-game_2.webp" class="small-thumb lazyload" alt="Real Flying Truck Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Real Flying Truck Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../game/top-speed-3d-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH-m-1eYXspuOmy0LDJHPLvJrnd7SAxfd2-w&s" class="small-thumb lazyload" alt="Top Speed 3D Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Top Speed 3D Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../game/moto-road-rash-3d-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrY9QUDY6P1i7QlRG36PqzgY66FEBD8abO4w&s" class="small-thumb lazyload" alt="Moto Road Rash 3D Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Moto Road Rash 3D Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../game/icycle-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/icycle-unblocked-game_2.webp" class="small-thumb lazyload" alt="Icycle Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Icycle Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
 	<a href="../game/gacha-life-unblocked-game.html">
 	<div class="list-game">
 		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/gacha-life-unblocked-game_2.webp" class="small-thumb lazyload" alt="Gacha Life Unblocked Game"></div>
@@ -350,31 +550,11 @@
 		</div>
 	</div>
 	</a>
-</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="../game/moto-x3m-pool-party.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamemonetize.com/mim4uot21hygwai6uek2u1t2ovb3lkzd/512x512.jpg" class="small-thumb lazyload" alt="Moto X3M Pool Party"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="../content/themes/default/images/star-5.png" alt="rating"></div>
-			<div class="list-title">Moto X3M Pool Party</div>
-		</div>
-	</div>
-	</a>
-</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="../game/moto-x3m.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWiafK6TmqZVntUSEMyqgAxrEP4RGHkcFq5A&s" class="small-thumb lazyload" alt="Moto X3M"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="../content/themes/default/images/star-5.png" alt="rating"></div>
-			<div class="list-title">Moto X3M</div>
-		</div>
-	</div>
-	</a>
 </div>									</div>
 			</div>
 			<div class="pagination-wrapper">
 				<nav aria-label="Page navigation example">
-					<ul class="pagination justify-content-center"><li class="page-item disabled"><a class="page-link" href="racing.html">1</a></li></ul>				</nav>
+					<ul class="pagination justify-content-center"><li class="page-item disabled"><a class="page-link" href="racing.html">1</a></li><li class="page-item "><a class="page-link" href="racing/2.html">2</a></li></ul>				</nav>
 			</div>
 		</div>
 		<h1>Classroom 6x Unblocked Games</h1>
@@ -414,5 +594,5 @@
 	<script type="text/javascript" src="../js/stats.js"></script>
 		  </body>
 
-<!--  phpstack-1113809-4800960.cloudwaysapps.com/category/racing , Sat, 24 Aug 2024 09:53:13 GMT -->
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/category/racing by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:50:24 GMT -->
 </html>

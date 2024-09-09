@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	
-<!--  phpstack-1113809-4800960.cloudwaysapps.com/category/casual/2 , Sat, 24 Aug 2024 09:54:54 GMT -->
-
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/category/casual/2 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:52:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+        
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<title>Casual | Play Unblocked Games</title>
@@ -19,7 +20,12 @@
 		<!-- Google fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-				        <!-- Google tag (gtag.js) -->
+				
+<style>
+.input-group {
+display: none;
+}
+</style>        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDLYWGWPHV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -44,7 +50,7 @@
 				<li class="nav-item">
 					</li>
 	</ul>
-	<form class="form-inline my-2 my-lg-0 search-bar" >
+	<form class="form-inline my-2 my-lg-0 search-bar" action="https://phpstack-1113809-4800960.cloudwaysapps.com/index.php">
 		<div class="input-group">
 			<input type="hidden" name="viewpage" value="search" />
 			<input type="text" class="form-control rounded-left search" placeholder="Search game" name="slug" minlength="2" required />
@@ -65,12 +71,146 @@
 </nav>			</div>
 		</div><div class="container">
 	<div class="game-container">
-				<div class="content-wrapper">
+		<style>
+.search-container {
+   
+    position: relative;
+    width: 400px; /* Adjust width as needed */
+    margin: auto;
+  border-style: solid;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-results-overlay {
+    position: absolute;
+    top: 40px; /* Adjust to position below the search box */
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto;
+    display: none;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-result-item {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0;
+}
+
+</style><!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" class="search-input" placeholder="Search games..." oninput="performSearch()">
+    <div id="search-results-overlay" class="search-results-overlay" style="display: none;"></div>
+</div><script>
+document.addEventListener('DOMContentLoaded', () => {
+    fetchSitemapData();
+});
+
+let gameData = [];
+
+// Function to fetch and parse the sitemap.xml
+function fetchSitemapData() {
+    fetch('../../sitemap.xml')
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(data, 'application/xml');
+            const locElements = xml.getElementsByTagName('loc');
+            
+            // Extracting titles and URLs
+            gameData = Array.from(locElements).map(loc => {
+                const url = loc.textContent;
+                const title = url.split('../../index.html').pop().replace(/-/g, ' ').replace('.html', '');
+                return { title, url }; // Store both title and URL
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing sitemap:', error);
+        });
+}
+
+// Search function to filter and display results
+function performSearch() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const resultsOverlay = document.getElementById('search-results-overlay');
+    
+    // Clear previous results
+    resultsOverlay.innerHTML = '';
+    
+    if (query.length < 2) {
+        resultsOverlay.style.display = 'none';
+        return;
+    }
+
+    // Filter titles based on the query
+    const filteredGames = gameData.filter(game => game.title.toLowerCase().includes(query));
+
+    // Display results in the overlay
+    if (filteredGames.length > 0) {
+        filteredGames.forEach(game => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'search-result-item';
+            resultItem.textContent = game.title;
+            resultItem.onclick = () => {
+                // Navigate to the URL of the selected game
+                window.location.href = game.url;
+            };
+            resultsOverlay.appendChild(resultItem);
+        });
+        resultsOverlay.style.display = 'block';
+    } else {
+        resultsOverlay.style.display = 'none';
+    }
+}
+
+// Hide the overlay when clicking outside of it
+document.addEventListener('click', function(event) {
+    const overlay = document.getElementById('search-results-overlay');
+    if (!event.target.closest('.search-container')) {
+        overlay.style.display = 'none';
+    }
+});
+
+</script>		<div class="content-wrapper">
 			<h3 class="item-title">Casual Games</h3>
-			<p>48 games in total. Page 2 of 2</p>
+			<p>50 games in total. Page 2 of 2</p>
 						<div class="game-container">
 				<div class="row">
 										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../../game/tiny-fishes-unblocked.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../../content/themes/default/images/thumb-placeholder1.png" data-src="https://www.coolmathgames.com/sites/default/files/tiny-fishing-20species-game-icon.png" class="small-thumb lazyload" alt="Tiny Fishes Unblocked"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Tiny Fishes Unblocked</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="../../game/idle-breakout-unblocked.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../../content/themes/default/images/thumb-placeholder1.png" data-src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=1200,height=1200,fit=cover,f=png/59a42104cf89164d41ed231574452322.png" class="small-thumb lazyload" alt="Idle Breakout Unblocked"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Idle Breakout Unblocked</div>
+		</div>
+	</div>
+	</a>
+</div>										<div class="col-md-2 col-sm-3 col-4 item-grid">
 	<a href="../../game/play-1-on-1-soccer-unblocked.html">
 	<div class="list-game">
 		<div class="list-thumbnail"><img src="../../content/themes/default/images/thumb-placeholder1.png" data-src="https://cdn.blipzi.com/1o/n1/1-on-1-soccer-d.jpg" class="small-thumb lazyload" alt="Play 1 on 1 Soccer Unblocked"></div>
@@ -234,5 +374,5 @@
 	<script type="text/javascript" src="../../js/stats.js"></script>
 		  </body>
 
-<!--  phpstack-1113809-4800960.cloudwaysapps.com/category/casual/2 , Sat, 24 Aug 2024 09:54:54 GMT -->
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/category/casual/2 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:52:35 GMT -->
 </html>

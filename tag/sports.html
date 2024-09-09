@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	
-<!--  phpstack-1113809-4800960.cloudwaysapps.com/tag/sports , Sat, 24 Aug 2024 09:55:49 GMT -->
-
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/tag/sports by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:53:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+        
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<title>sports | Play Unblocked Games</title>
@@ -19,7 +20,12 @@
 		<!-- Google fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-				        <!-- Google tag (gtag.js) -->
+				
+<style>
+.input-group {
+display: none;
+}
+</style>        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDLYWGWPHV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -44,7 +50,7 @@
 				<li class="nav-item">
 					</li>
 	</ul>
-	<form class="form-inline my-2 my-lg-0 search-bar" >
+	<form class="form-inline my-2 my-lg-0 search-bar" action="https://phpstack-1113809-4800960.cloudwaysapps.com/index.php">
 		<div class="input-group">
 			<input type="hidden" name="viewpage" value="search" />
 			<input type="text" class="form-control rounded-left search" placeholder="Search game" name="slug" minlength="2" required />
@@ -65,7 +71,121 @@
 </nav>			</div>
 		</div><div class="container">
 	<div class="game-container">
-				<div class="content-wrapper">
+		<style>
+.search-container {
+   
+    position: relative;
+    width: 400px; /* Adjust width as needed */
+    margin: auto;
+  border-style: solid;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-results-overlay {
+    position: absolute;
+    top: 40px; /* Adjust to position below the search box */
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    max-height: 200px; /* Adjust height as needed */
+    overflow-y: auto;
+    display: none;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-result-item {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background-color: #f0f0f0;
+}
+
+</style><!-- Search Bar -->
+<div class="search-container">
+    <input type="text" id="search-input" class="search-input" placeholder="Search games..." oninput="performSearch()">
+    <div id="search-results-overlay" class="search-results-overlay" style="display: none;"></div>
+</div><script>
+document.addEventListener('DOMContentLoaded', () => {
+    fetchSitemapData();
+});
+
+let gameData = [];
+
+// Function to fetch and parse the sitemap.xml
+function fetchSitemapData() {
+    fetch('../sitemap.xml')
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(data, 'application/xml');
+            const locElements = xml.getElementsByTagName('loc');
+            
+            // Extracting titles and URLs
+            gameData = Array.from(locElements).map(loc => {
+                const url = loc.textContent;
+                const title = url.split('../index.html').pop().replace(/-/g, ' ').replace('.html', '');
+                return { title, url }; // Store both title and URL
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing sitemap:', error);
+        });
+}
+
+// Search function to filter and display results
+function performSearch() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const resultsOverlay = document.getElementById('search-results-overlay');
+    
+    // Clear previous results
+    resultsOverlay.innerHTML = '';
+    
+    if (query.length < 2) {
+        resultsOverlay.style.display = 'none';
+        return;
+    }
+
+    // Filter titles based on the query
+    const filteredGames = gameData.filter(game => game.title.toLowerCase().includes(query));
+
+    // Display results in the overlay
+    if (filteredGames.length > 0) {
+        filteredGames.forEach(game => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'search-result-item';
+            resultItem.textContent = game.title;
+            resultItem.onclick = () => {
+                // Navigate to the URL of the selected game
+                window.location.href = game.url;
+            };
+            resultsOverlay.appendChild(resultItem);
+        });
+        resultsOverlay.style.display = 'block';
+    } else {
+        resultsOverlay.style.display = 'none';
+    }
+}
+
+// Hide the overlay when clicking outside of it
+document.addEventListener('click', function(event) {
+    const overlay = document.getElementById('search-results-overlay');
+    if (!event.target.closest('.search-container')) {
+        overlay.style.display = 'none';
+    }
+});
+
+</script>		<div class="content-wrapper">
 			<h3 class="item-title">sports Games</h3>
 			<p>1 games in total. Page 1 of 1</p>
 			<div class="game-container">
@@ -124,5 +244,5 @@
 	<script type="text/javascript" src="../js/stats.js"></script>
 		  </body>
 
-<!--  phpstack-1113809-4800960.cloudwaysapps.com/tag/sports , Sat, 24 Aug 2024 09:55:49 GMT -->
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/tag/sports by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:53:45 GMT -->
 </html>
