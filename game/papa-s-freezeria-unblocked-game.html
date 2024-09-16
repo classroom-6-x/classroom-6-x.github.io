@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	
-<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/game/papa-s-freezeria-unblocked-game by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:50:50 GMT -->
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/game/papa-s-freezeria-unblocked-game by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 07:33:35 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
         
@@ -119,6 +119,7 @@ display: none;
     <input type="text" id="search-input" class="search-input" placeholder="Search games..." oninput="performSearch()">
     <div id="search-results-overlay" class="search-results-overlay" style="display: none;"></div>
 </div><script>
+// search script for 6xgithub
 document.addEventListener('DOMContentLoaded', () => {
     fetchSitemapData();
 });
@@ -127,23 +128,31 @@ let gameData = [];
 
 // Function to fetch and parse the sitemap.xml
 function fetchSitemapData() {
-    fetch('../sitemap.xml')
+    fetch('../sitemap.xml') // Ensure the correct path to your sitemap.xml
         .then(response => response.text())
         .then(data => {
             const parser = new DOMParser();
             const xml = parser.parseFromString(data, 'application/xml');
             const locElements = xml.getElementsByTagName('loc');
             
-            // Extracting titles and URLs
+            // Extract titles and URLs from the sitemap
             gameData = Array.from(locElements).map(loc => {
-                const url = loc.textContent;
-                const title = url.split('../index.html').pop().replace(/-/g, ' ').replace('.html', '');
-                return { title, url }; // Store both title and URL
+                const url = loc.textContent.trim();
+                const title = generateTitleFromURL(url);
+                return { title, url };
             });
         })
         .catch(error => {
             console.error('Error fetching or parsing sitemap:', error);
         });
+}
+
+// Function to generate a title from the URL
+function generateTitleFromURL(url) {
+    // Extract the last segment of the URL and format it as a title
+    const lastSegment = url.split('../index.html').pop().replace('.html', '');
+    const title = lastSegment.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+    return title;
 }
 
 // Search function to filter and display results
@@ -167,7 +176,7 @@ function performSearch() {
         filteredGames.forEach(game => {
             const resultItem = document.createElement('div');
             resultItem.className = 'search-result-item';
-            resultItem.textContent = game.title;
+            resultItem.textContent = game.title; // Display the title
             resultItem.onclick = () => {
                 // Navigate to the URL of the selected game
                 window.location.href = game.url;
@@ -197,7 +206,7 @@ document.addEventListener('click', function(event) {
 				<div class="single-info-container">
 					<div class="header-left">
 						<h1 class="single-title">Papa&#039;s Freezeria Unblocked Game</h1>
-						<p>Played 22 times.</p>
+						<p>Played 28 times.</p>
 					</div>
 					<div class="header-right">
 						<div class="stats-vote">
@@ -239,20 +248,10 @@ Prepare to relax and go on a voyage of frozen delight with Papa's Freezeria. Pla
 				<p class="cat-list"> 
 										<a href="../category/strategy.html" class="cat-link">Strategy</a>
 									</p>
-				<b>Tags:</b><div class="game-tag-list"><a href="../tag/papa-freezeria" class="tag-item">papa-freezeria</a></div>							</div>
+				<b>Tags:</b><div class="game-tag-list"><a href="../tag/papa-freezeria.html" class="tag-item">papa-freezeria</a></div>							</div>
 			<div class="col-md-3">
 				<div class="sidebar">
 	<div class="widget"><h4 class="widget-title"><i class="fa fa-gamepad" aria-hidden="true"></i>Popular Games</h4><div class="row">	<div class="col-4 list-tile">
-		<a href="play-unblock-it-online.html">
-			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/play-unblock-it-online_2.webp" class="small-thumb" alt="Play Unblock It Online"></div>
-				<div class="list-content">
-					<div class="list-title">Play Unblock It Online</div>
-				</div>
-			</div>
-		</a>
-	</div>
-		<div class="col-4 list-tile">
 		<a href="core-ball-unblocked-game.html">
 			<div class="list-game">
 				<div class="list-thumbnail"><img src="../files/images/core-ball.jpg" class="small-thumb" alt="Core Ball Unblocked Game "></div>
@@ -278,6 +277,16 @@ Prepare to relax and go on a voyage of frozen delight with Papa's Freezeria. Pla
 				<div class="list-thumbnail"><img src="https://school-lessons.lol/_webp/eggycar.webp" class="small-thumb" alt="Eggy Car Unblocked Game"></div>
 				<div class="list-content">
 					<div class="list-title">Eggy Car Unblocked Game</div>
+				</div>
+			</div>
+		</a>
+	</div>
+		<div class="col-4 list-tile">
+		<a href="play-uphill-bus-simulator-3d.html">
+			<div class="list-game">
+				<div class="list-thumbnail"><img src="../thumbs/play-uphill-bus-simulator-3d_2.webp" class="small-thumb" alt="Play Uphill Bus Simulator 3D"></div>
+				<div class="list-content">
+					<div class="list-title">Play Uphill Bus Simulator 3D</div>
 				</div>
 			</div>
 		</a>
@@ -333,91 +342,91 @@ Prepare to relax and go on a voyage of frozen delight with Papa's Freezeria. Pla
 		</a>
 	</div>
 	</div></div><div class="widget"><div class="row">	<div class="col-4 list-tile">
-		<a href="basketball-frvr-unblocked-game.html">
+		<a href="play-last-war-survival-battle.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/basketball-frvr-unblocked-game_2.webp" class="small-thumb" alt="Basketball FRVR Unblocked Game"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-last-war-survival-battle_2.webp" class="small-thumb" alt="Play Last War: Survival Battle"></div>
 				<div class="list-content">
-					<div class="list-title">Basketball FRVR Unblocked Game</div>
+					<div class="list-title">Play Last War: Survival Battle</div>
 				</div>
 			</div>
 		</a>
 	</div>
 		<div class="col-4 list-tile">
-		<a href="play-cluster-rush-unblocked-online.html">
+		<a href="play-only-up-unblocked.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/play-cluster-rush-unblocked-online_2.webp" class="small-thumb" alt="Play Cluster Rush Unblocked Online"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-only-up-unblocked_2.webp" class="small-thumb" alt="Play Only Up Unblocked"></div>
 				<div class="list-content">
-					<div class="list-title">Play Cluster Rush Unblocked Online</div>
+					<div class="list-title">Play Only Up Unblocked</div>
 				</div>
 			</div>
 		</a>
 	</div>
 		<div class="col-4 list-tile">
-		<a href="the-impossible-quiz-unblocked-game.html">
+		<a href="play-rescue-rift-unblocked.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/the-impossible-quiz-unblocked-game_2.webp" class="small-thumb" alt="The Impossible Quiz Unblocked Game"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-rescue-rift-unblocked_2.webp" class="small-thumb" alt="Play Rescue Rift Unblocked"></div>
 				<div class="list-content">
-					<div class="list-title">The Impossible Quiz Unblocked Game</div>
+					<div class="list-title">Play Rescue Rift Unblocked</div>
 				</div>
 			</div>
 		</a>
 	</div>
 		<div class="col-4 list-tile">
-		<a href="play-basket-ball-unblocked-online.html">
+		<a href="play-rush-team-unblocked.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/play-basket-ball-unblocked-online_2.webp" class="small-thumb" alt="Play Basket Ball Unblocked Online"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-rush-team-unblocked_2.webp" class="small-thumb" alt="Play Rush Team Unblocked"></div>
 				<div class="list-content">
-					<div class="list-title">Play Basket Ball Unblocked Online</div>
+					<div class="list-title">Play Rush Team Unblocked</div>
 				</div>
 			</div>
 		</a>
 	</div>
 		<div class="col-4 list-tile">
-		<a href="play-parking-fury-unblocked-online.html">
+		<a href="play-bus-driver-simulator-unblocked.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/play-parking-fury-unblocked-online_2.webp" class="small-thumb" alt="Play Parking Fury Unblocked Online"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-bus-driver-simulator-unblocked_2.webp" class="small-thumb" alt="Play Bus Driver Simulator Unblocked"></div>
 				<div class="list-content">
-					<div class="list-title">Play Parking Fury Unblocked Online</div>
+					<div class="list-title">Play Bus Driver Simulator Unblocked</div>
 				</div>
 			</div>
 		</a>
 	</div>
 		<div class="col-4 list-tile">
-		<a href="there-is-no-real-game.html">
+		<a href="play-state-wars-unblocked.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../../cdn2.steamgriddb.com/icon/4bc2d171e7cff7fa3c2c4bd0bf5dabc4.png" class="small-thumb" alt="There Is No Real Game"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-state-wars-unblocked_2.webp" class="small-thumb" alt="Play State Wars Unblocked"></div>
 				<div class="list-content">
-					<div class="list-title">There Is No Real Game</div>
+					<div class="list-title">Play State Wars Unblocked</div>
 				</div>
 			</div>
 		</a>
 	</div>
 		<div class="col-4 list-tile">
-		<a href="play-monster-tracks-unblocked-online.html">
+		<a href="play-four-colors-card-game.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/play-monster-tracks-unblocked-online_2.webp" class="small-thumb" alt="Play Monster Tracks Unblocked Online"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-four-colors-card-game_2.webp" class="small-thumb" alt="Play Four Colors Card Game"></div>
 				<div class="list-content">
-					<div class="list-title">Play Monster Tracks Unblocked Online</div>
+					<div class="list-title">Play Four Colors Card Game</div>
 				</div>
 			</div>
 		</a>
 	</div>
 		<div class="col-4 list-tile">
-		<a href="play-jelly-truck-unblocked-online.html">
+		<a href="play-dice-push-unblocked.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/play-jelly-truck-unblocked-online_2.webp" class="small-thumb" alt="Play Jelly Truck Unblocked Online"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-dice-push-unblocked_2.webp" class="small-thumb" alt="Play Dice Push Unblocked"></div>
 				<div class="list-content">
-					<div class="list-title">Play Jelly Truck Unblocked Online</div>
+					<div class="list-title">Play Dice Push Unblocked</div>
 				</div>
 			</div>
 		</a>
 	</div>
 		<div class="col-4 list-tile">
-		<a href="bike-trials-winter-2-unblocked.html">
+		<a href="play-ludo-king-online.html">
 			<div class="list-game">
-				<div class="list-thumbnail"><img src="../thumbs/bike-trials-winter-2-unblocked_2.webp" class="small-thumb" alt="Bike Trials Winter 2 Unblocked"></div>
+				<div class="list-thumbnail"><img src="../thumbs/play-ludo-king-online_2.webp" class="small-thumb" alt="Play Ludo King Online"></div>
 				<div class="list-content">
-					<div class="list-title">Bike Trials Winter 2 Unblocked</div>
+					<div class="list-title">Play Ludo King Online</div>
 				</div>
 			</div>
 		</a>
@@ -426,11 +435,11 @@ Prepare to relax and go on a voyage of frozen delight with Papa's Freezeria. Pla
 		</div>
 	</div>
 	<h1>Classroom 6x Unblocked Games</h1>
-                  <p>We have curated an exciting collection of games available on the Classroom 6x site that can be played endlessly.
+                  <p>We have curated an exciting collection of 6x games available on the Classroom 6x site that can be played endlessly.
                     </p>
-                  <p>On your preferred platform of unblocked games 6x, you can engage in never-ending entertainment. While some games can be completed within a few hours and easily forgotten, others have the potential to captivate you for hundreds or even thousands of hours. With a wide selection of popular games, there is something for every player's taste.
+                  <p>On your preferred platform of unblocked games x6, you can engage in never-ending entertainment. While some games can be completed within a few hours and easily forgotten, others have the potential to captivate you for hundreds or even thousands of hours. With a wide selection of popular games, there is something for every player's taste.
                   </p>
-                  <p>Feeling bored with your current activities? Whether it's tedious studies, routine office work, or simply a bad mood, take a break and engage in something enjoyable. Classroom 6x Unblocked Games offers a range of options to help you find a fun pastime that can occupy your time for minutes or even hours.
+                  <p>Feeling bored with your current activities? Whether it's tedious studies, routine office work, or simply a bad mood, take a break and engage in something enjoyable. <a href="https://classroom-6-x.github.io/">Classroom 6x</a> Unblocked Games offers a range of options to help you find a fun pastime that can occupy your time for minutes or even hours.
                   </p>
                  <p> While flash games were previously associated with student or office entertainment, HTML5 unblocked games have now taken their place and continue to thrive in the gaming industry. Our website not only features old or well-known game projects across various genres and styles but also keeps up with the latest releases that pique the interest of modern players.
                   </p>	</div>
@@ -438,32 +447,12 @@ Prepare to relax and go on a voyage of frozen delight with Papa's Freezeria. Pla
 		<h3 class="item-title"><i class="fa fa-thumbs-up" aria-hidden="true"></i>SIMILAR GAMES</h3>
 		<div class="row">
 			<div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="play-8-ball-pool-unblocked-online.html">
+	<a href="basketball-frvr-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-8-ball-pool-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play 8 Ball Pool Unblocked Online"></div>
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/basketball-frvr-unblocked-game_2.webp" class="small-thumb lazyload" alt="Basketball FRVR Unblocked Game"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play 8 Ball Pool Unblocked Online</div>
-		</div>
-	</div>
-	</a>
-</div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="infiltrating-the-airship-unblocked-game.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://i0.wp.com/herkuli.net/wp-content/uploads/2021/03/infiltrating-the-airship2.png?fit=512%2C512&ssl=1" class="small-thumb lazyload" alt="Infiltrating The Airship Unblocked Game"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Infiltrating The Airship Unblocked Game</div>
-		</div>
-	</div>
-	</a>
-</div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="icycle-unblocked-game.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/icycle-unblocked-game_2.webp" class="small-thumb lazyload" alt="Icycle Unblocked Game"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Icycle Unblocked Game</div>
+			<div class="list-title">Basketball FRVR Unblocked Game</div>
 		</div>
 	</div>
 	</a>
@@ -478,72 +467,32 @@ Prepare to relax and go on a voyage of frozen delight with Papa's Freezeria. Pla
 	</div>
 	</a>
 </div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="play-4-pix-word-quiz-unblocked.html">
+	<a href="core-ball-unblocked-game.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamedistribution.com/992bf414c2fd4a7d8160bcbafd99b6f3-512x512.jpg" class="small-thumb lazyload" alt="Play 4 Pix Word Quiz Unblocked"></div>
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/files/images/core-ball.jpg" class="small-thumb lazyload" alt="Core Ball Unblocked Game "></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Play 4 Pix Word Quiz Unblocked</div>
+			<div class="list-title">Core Ball Unblocked Game </div>
 		</div>
 	</div>
 	</a>
 </div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="e-scooter-unblocked-game.html">
+	<a href="daily-crossword-unblocked.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://play-lh.googleusercontent.com/iw9A3msp6z7R-vtLMHw5FThpPKLe12hBvkjMhltj63eWuX3tqTJ0DGh2eWCD7dhY0KU" class="small-thumb lazyload" alt="E-Scooter Unblocked Game"></div>
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://img.gamedistribution.com/e74d9a4123fb4880bc5e3d7664c9dcc9-512x512.jpg" class="small-thumb lazyload" alt="Daily Crossword Unblocked"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">E-Scooter Unblocked Game</div>
+			<div class="list-title">Daily Crossword Unblocked</div>
 		</div>
 	</div>
 	</a>
 </div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="crazy-tunnel-3d-unblocked-game.html">
+	<a href="play-among-us-unblocked.html">
 	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/crazy-tunnel-3d-unblocked-game_2.webp" class="small-thumb lazyload" alt="Crazy Tunnel 3D Unblocked Game"></div>
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-among-us-unblocked_2.webp" class="small-thumb lazyload" alt="Play Among Us Unblocked"></div>
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Crazy Tunnel 3D Unblocked Game</div>
-		</div>
-	</div>
-	</a>
-</div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="bike-trials-winter-2-unblocked.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/bike-trials-winter-2-unblocked_2.webp" class="small-thumb lazyload" alt="Bike Trials Winter 2 Unblocked"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Bike Trials Winter 2 Unblocked</div>
-		</div>
-	</div>
-	</a>
-</div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="electron-dash-unblocked-game.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/electron-dash-unblocked-game_2.webp" class="small-thumb lazyload" alt="Electron Dash Unblocked Game"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Electron Dash Unblocked Game</div>
-		</div>
-	</div>
-	</a>
-</div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="color-road-unblocked-game.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/color-road-unblocked-game_2.webp" class="small-thumb lazyload" alt="Color Road Unblocked Game"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Color Road Unblocked Game</div>
-		</div>
-	</div>
-	</a>
-</div><div class="col-md-2 col-sm-3 col-4 item-grid">
-	<a href="shoot-the-bottle-unblocked-game.html">
-	<div class="list-game">
-		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://cdn6.aptoide.com/imgs/f/2/2/f2294f07bba8027f31d3f3e5da632435_icon.png" class="small-thumb lazyload" alt="Shoot The Bottle Unblocked Game"></div>
-		<div class="list-content">
-			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
-			<div class="list-title">Shoot The Bottle Unblocked Game</div>
+			<div class="list-title">Play Among Us Unblocked</div>
 		</div>
 	</div>
 	</a>
@@ -554,6 +503,66 @@ Prepare to relax and go on a voyage of frozen delight with Papa's Freezeria. Pla
 		<div class="list-content">
 			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
 			<div class="list-title">Daily NYT Sudoku Online</div>
+		</div>
+	</div>
+	</a>
+</div><div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="stealing-the-diamond-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/df942cb27fd6d1be99cbc496550825cb50a0a4c057476ce5cc350141b0ac7ada.png" class="small-thumb lazyload" alt="Stealing The Diamond Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Stealing The Diamond Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div><div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="fancy-pants-3-unblocked.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/fancy-pants-3-unblocked_2.webp" class="small-thumb lazyload" alt="Fancy Pants 3 Unblocked"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Fancy Pants 3 Unblocked</div>
+		</div>
+	</div>
+	</a>
+</div><div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="play-circloo-2-unblocked-online.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/play-circloo-2-unblocked-online_2.webp" class="small-thumb lazyload" alt="Play Circloo 2 Unblocked Online"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Play Circloo 2 Unblocked Online</div>
+		</div>
+	</div>
+	</a>
+</div><div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="duck-life-5-unblocked.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://games.lol/wp-content/uploads/2024/03/duck-life-5-on-pc.jpg" class="small-thumb lazyload" alt="Duck Life 5 Unblocked"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Duck Life 5 Unblocked</div>
+		</div>
+	</div>
+	</a>
+</div><div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="duck-life-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVbKJST5TTnBJ1QVM-z3ZQgagxSncQ2WQ3jBxB96U7jKsL7SDoRj7MHXZXzOMhH2bsz4M&usqp=CAU" class="small-thumb lazyload" alt="Duck Life Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">Duck Life Unblocked Game</div>
+		</div>
+	</div>
+	</a>
+</div><div class="col-md-2 col-sm-3 col-4 item-grid">
+	<a href="circloo-unblocked-game.html">
+	<div class="list-game">
+		<div class="list-thumbnail"><img src="../content/themes/default/images/thumb-placeholder1.png" data-src="https://phpstack-1113809-4800960.cloudwaysapps.com/thumbs/circloo-unblocked-game_2.webp" class="small-thumb lazyload" alt="CirCloO Unblocked Game"></div>
+		<div class="list-content">
+			<div class="star-rating text-center"><img src="../content/themes/default/images/star-0.png" alt="rating"></div>
+			<div class="list-title">CirCloO Unblocked Game</div>
 		</div>
 	</div>
 	</a>
@@ -587,5 +596,5 @@ Prepare to relax and go on a voyage of frozen delight with Papa's Freezeria. Pla
 	<script type="text/javascript" src="../js/stats.js"></script>
 		  </body>
 
-<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/game/papa-s-freezeria-unblocked-game by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Sep 2024 11:50:51 GMT -->
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/game/papa-s-freezeria-unblocked-game by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 07:33:37 GMT -->
 </html>

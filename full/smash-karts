@@ -1,0 +1,46 @@
+
+	<!DOCTYPE html>
+	<html>
+	
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/full/smash-karts by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 07:36:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="utf-8">
+		<title>Smash Karts</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="description" content="Play Smash Karts, the thrilling multiplayer kart racing game where you can race, battle, and destroy your opponents in chaotic arenas! Customize your kart, collect powerful weapons, and unleash mayhem as you compete against players from around the world. With fast-paced gameplay, vibrant graphics, and endless fun, Smash Karts offers an exciting blend of racing and combat. Join the race now and dominate the track in this epic online kart game—no download required!">
+		<meta name="robots" content="noindex">
+		<style type="text/css">
+			body {
+			    color: #eee;
+			    line-height: 1.43;
+			    position: inherit;
+			    margin: 0;
+			    padding: 0;
+			    background-color: #000;
+			    overflow: hidden;
+			    height: 100%;
+			}
+			#game-content {
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 0;
+			    height: 0;
+			    overflow: hidden;
+			    max-width: 100%;
+			    max-height: 100%;
+			    min-width: 100%;
+			    min-height: 100%;
+			    box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+				<iframe id="game-content" frameborder="0" allow="autoplay" allowfullscreen="" seamless="" scrolling="no" src="https://smashkarts.io/?gp"></iframe>
+	</body>
+	
+<!-- Mirrored from phpstack-1113809-4800960.cloudwaysapps.com/full/smash-karts by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 07:36:27 GMT -->
+</html>
+
+	
